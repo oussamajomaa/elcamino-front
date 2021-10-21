@@ -1,0 +1,54 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-title color="light">Notification</ion-title>
+		<!-- Hamburger -->
+		<ion-buttons slot="start" >
+			<ion-menu-button autoHide="false" color="light"></ion-menu-button>
+		</ion-buttons>
+
+	</ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+		<div class="div-button">
+			<ion-tab-button  routerLink="/nav/cours">
+				<ion-icon name="school"></ion-icon>
+				<ion-label>Cours</ion-label>
+				<span *ngIf="difference !== 0">{{difference}}</span>
+			</ion-tab-button>
+			<ion-tab-button>
+				<img src="assets/icon/event.svg" alt="">
+				<ion-label>Evénements</ion-label>
+			</ion-tab-button>
+		</div>
+		<div class="div-button">
+			<ion-tab-button>
+				<ion-icon name="musical-notes" ></ion-icon>
+				<ion-label>Orchestre</ion-label>
+			</ion-tab-button>
+			<ion-tab-button>
+				<img src="assets/icon/stage.svg" alt="">
+				<ion-label>Stages</ion-label>
+			</ion-tab-button>
+		</div>
+		<div class="div-button">
+			<ion-tab-button>
+				<img src="assets/icon/partner.svg" alt="">
+				<ion-label>Partenaires</ion-label>
+			</ion-tab-button>
+			<ion-tab-button>
+				<ion-icon name="camera" ></ion-icon>
+				<ion-label>Souvenirs</ion-label>
+			</ion-tab-button>
+		</div>
+		<div class="div-button">
+			<ion-tab-button>
+				<img src="assets/icon/oppb.png" alt="">
+			</ion-tab-button>
+			<ion-tab-button style="visibility: hidden;">
+				<img src="assets/icon/oppb.png" alt="">
+			</ion-tab-button>
+		</div>
+		<img src="assets/img/logo-blanc.png" alt="" style="max-width: 200px; display:block;margin:auto;">
+</ion-content>

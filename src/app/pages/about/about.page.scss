@@ -1,0 +1,28 @@
+p{
+    text-align: justify;
+}
+
+
+ion-card h3{
+    font-weight: bold;
+    font-size: 18;
+}
+
+ion-title{
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+    margin-right: 30px;
+}
+
+ion-content, ion-toolbar{
+    --background: #192340;
+}
+
+ion-header{
+    box-shadow: 0 4px 2px -2px #FBBA00;
+}
+
+ion-card{
+    --background: #FBBA00;
+}
