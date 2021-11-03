@@ -1,9 +1,9 @@
 <ion-header>
 	<ion-toolbar>
-		<ion-title color="light">Notification</ion-title>
+		<ion-title color="warning">Notification</ion-title>
 		<!-- Hamburger -->
-		<ion-buttons slot="start" >
-			<ion-menu-button autoHide="false" color="light"></ion-menu-button>
+		<ion-buttons slot="start">
+			<ion-menu-button autoHide="false" color="warning"></ion-menu-button>
 		</ion-buttons>
 
 	</ion-toolbar>
@@ -12,7 +12,7 @@
 <ion-content class="ion-padding">
 
 		<div class="div-button">
-			<ion-tab-button  routerLink="/nav/cours">
+			<ion-tab-button routerLink="/nav/cours">
 				<ion-icon name="school"></ion-icon>
 				<ion-label>Cours</ion-label>
 				<span *ngIf="difference !== 0">{{difference}}</span>

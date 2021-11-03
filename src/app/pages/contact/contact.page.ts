@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { IonRouterOutlet, Platform } from '@ionic/angular';
-import { Plugins } from '@capacitor/core';
-const { App } = Plugins;
+// import { Plugins } from '@capacitor/core';
+// const { App } = Plugins;
+import { App } from '@capacitor/app';
+
 
 @Component({
 	selector: 'app-contact',

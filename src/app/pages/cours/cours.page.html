@@ -1,14 +1,14 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title color="light">Cours</ion-title>
-    <ion-back-button color="light" defaultHref="/nav/notification" slot="end"></ion-back-button>
+    <ion-title color="warning">Cours</ion-title>
+    <ion-back-button color="warning" defaultHref="/nav/notification" slot="end"></ion-back-button>
 
  
     <!--<ion-title class="ion-text-center">Cours</ion-title>-->
 
   <!-- Hamburger -->
   <ion-buttons  slot="start">
-    <ion-menu-button autoHide="false" color="light"></ion-menu-button>
+    <ion-menu-button autoHide="false" color="warning"></ion-menu-button>
   </ion-buttons>
 
 </ion-toolbar>
@@ -22,12 +22,9 @@
     <ion-item>
       <ion-label color="primary">{{notification.title}}</ion-label>
       <ion-label color="primary">{{notification.date}}</ion-label>
-			<!--<ion-icon name="notifications" slot="start"></ion-icon>-->
-			
-			<!--<ion-button color="medium" slot="end">click</ion-button>-->
 		</ion-item>
 
-		<ion-card-content>
+		<ion-card-content color="warning">
 			{{notification.body}}
 		</ion-card-content>
 	</ion-card>

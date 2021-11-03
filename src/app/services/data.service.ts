@@ -5,7 +5,6 @@ import { Storage } from '@ionic/storage-angular'
 // import { switchMap } from 'rxjs/operators';
 // import { filter } from 'rxjs/operators';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { BehaviorSubject } from 'rxjs';
 
 
 
@@ -14,8 +13,7 @@ import { BehaviorSubject } from 'rxjs';
 	providedIn: 'root'
 })
 export class DataService {
-	badgeState = new BehaviorSubject(false)
-	// private storageReadey = new BehaviorSubject(false)
+	
 	constructor(
 		private storage: Storage,
 		private firestore:AngularFirestore
@@ -23,20 +21,21 @@ export class DataService {
 		) {
 		this.init()
 		// this.getNotificationNumber()
-		this.getNotifNumber()
+		// this.getNotifNumber()
+		// this.setStorage()
 	}
 
 	init(){
 		this.storage.create()
-		this.storage.remove('badge')
+		// this.storage.remove('badge')
 		
 	}
 
-	getNotifNumber(){
-		this.firestore.collection('notification').get()
-		.subscribe(res => this.storage.set('notification',res.size))
+	// getNotifNumber(){
+	// 	this.firestore.collection('notification').get()
+	// 	.subscribe(res => this.storage.set('notification',res.size))
 
-	}
+	// }
 
 	
 	getNotification(){
@@ -47,10 +46,14 @@ export class DataService {
 		// return this.firestore.collection('notification',ref => ref.where('category','==','Formation')).snapshotChanges(["added"])
 	}
 
+	// setStorage(){
+	// 	this.getNotification().subscribe(res => {
+	// 		this.storage.set('cours',res.filter(c =>c.payload.doc.get('category')==='cours').length)
+	// 		this.storage.set('stage',res.filter(c =>c.payload.doc.get('category')==='stage').length)
+	// 		this.storage.set('event',res.filter(c =>c.payload.doc.get('category')==='event').length)
+	// 	})
+	// }
 
-	changeState(){
-		return this.badgeState.value
-	}
 
 
 

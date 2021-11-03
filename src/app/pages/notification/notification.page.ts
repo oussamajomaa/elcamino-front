@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { IonRouterOutlet, Platform } from '@ionic/angular';
-import { Plugins } from '@capacitor/core';
-const { App } = Plugins;
+// import { Plugins } from '@capacitor/core';
+// const { App } = Plugins;
+import { App } from '@capacitor/app';
 
 import { Storage } from '@ionic/storage-angular'
+import { NavigationEnd, Router } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
-import { Router } from '@angular/router';
 
 
 @Component({
@@ -18,35 +19,36 @@ export class NotificationPage implements OnInit {
 	storageNumber = 0
 	difference = 0
 	id:number=0
-	badgeState:boolean
+	navigationSubscription
+
 	constructor(
 		private platform: Platform,
 		private routerOutlet: IonRouterOutlet,
 		private storage: Storage,
+		private router:Router,
 		private dataService:DataService,
-		private router:Router
 	) {
 		this.platform.backButton.subscribeWithPriority(-1, () => {
 			if (!this.routerOutlet.canGoBack()) {
 				App.exitApp();
 			}
 		});		
-		this.badgeState = this.dataService.changeState()
-		this.dataService.badgeState.next(!this.badgeState)
-		if (this.dataService.changeState()) console.log('true')
-		else console.log('false');
 		
-		
-		console.log(this.badgeState);
 	}
 
 	ngOnInit() {
-		
-		
-		this.storage.get('notification').then(res => {
-			this.notifications = res
+		// this.navigationSubscription = this.router.events.subscribe((e: any) => {
+		// 	if (e instanceof NavigationEnd) {
+			  this.getDifference()
+		// 	}
+		//   });
+	}
+
+	getDifference(){
+		this.dataService.getNotification().subscribe(res => {
+			this.notifications = res.filter(c =>c.payload.doc.get('category')==='cours').length
 			console.log('Nombre de notification dans la base de données', this.notifications);
-			this.storage.get('badge').then(res => {
+			this.storage.get('cours').then(res => {
 				this.storageNumber = res || 0
 				console.log('Nombre de notification dans le localStorage', this.storageNumber);
 				this.difference = this.notifications - this.storageNumber
@@ -54,8 +56,4 @@ export class NotificationPage implements OnInit {
 			})
 		})
 	}
-
-	// navigateToCours(){
-	// 	this.router.navigate(["nav/cours"],{queryParams:{id:this.badgeState}})
-	// }
 }

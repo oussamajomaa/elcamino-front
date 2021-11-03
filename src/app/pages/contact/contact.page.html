@@ -1,36 +1,35 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title color="light">Contact</ion-title>
+	<ion-toolbar>
+		<ion-title color="warning">Contact</ion-title>
+		<ion-back-button color="warning" defaultHref="/nav/notification" slot="end"></ion-back-button>
+		<!-- Hamburger -->
+		<ion-buttons slot="start">
+			<ion-menu-button autoHide="false" color="warning"></ion-menu-button>
+		</ion-buttons>
 
-    <!-- Hamburger -->
-    <ion-buttons slot="start">
-      <ion-menu-button autoHide="false" color="light"></ion-menu-button>
-    </ion-buttons>
-
-  </ion-toolbar>
+	</ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-  <ion-card >
-    <ion-card-content>
-      <ion-text color="primary">
-        <p>El Camino forme de jeunes musiciens avec une pédagogie très innovante. Inaugurée le samedi 3 octobre 2015, l'école
-          de Pau accueille 180 enfants.</p>
-      </ion-text>
-        <div class="icon-title">
-            <ion-icon slot="icon-only" name="globe" color="primary" style="margin-right: 10px;"></ion-icon>
-            <ion-label color="primary">www.elcamino.fr</ion-label>
-        </div>
-        <div class="icon-title">
-          <ion-icon slot="icon-only" name="call" color="primary" style="margin-right: 10px;"></ion-icon>
-          <ion-label color="primary">05 59 33 00 85</ion-label>
-      </div>
-      <div class="icon-title">
-        <ion-icon slot="icon-only" name="at" color="primary" style="margin-right: 10px;"></ion-icon>
-        <ion-label color="primary">contact@elcamino.fr</ion-label>
-    </div>
-  </ion-card-content>
-</ion-card>
-</ion-content>
+<ion-content class="">
+		<div class="ion-padding" style="margin-bottom: 30px;">
+			<ion-text color="">
+				<p>El Camino forme de jeunes musiciens avec une pédagogie très innovante. Inaugurée le samedi 3 octobre
+					2015, l'école
+					de Pau accueille 180 enfants.</p>
+			</ion-text>
+			<div class="icon-title">
+				<ion-icon slot="icon-only" name="globe" color="warning" style="margin-right: 10px;"></ion-icon>
+				<ion-label color="">www.elcamino.fr</ion-label>
+			</div>
+			<div class="icon-title">
+				<ion-icon slot="icon-only" name="call" color="warning" style="margin-right: 10px;"></ion-icon>
+				<ion-label color="">05 59 33 00 85</ion-label>
+			</div>
+			<div class="icon-title">
+				<ion-icon slot="icon-only" name="at" color="warning" style="margin-right: 10px;"></ion-icon>
+				<ion-label color="">contact@elcamino.fr</ion-label>
+			</div>
+		</div>
 
-  
+		<img src="assets/img/map.png" style="display:block;margin:auto" alt="">
+</ion-content>

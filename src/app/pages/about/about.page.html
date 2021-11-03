@@ -1,66 +1,47 @@
 <ion-header>
 	<ion-toolbar>
-		<ion-title color="light">À propos</ion-title>
-
+		<ion-title color="warning">À propos</ion-title>
+		<ion-back-button color="warning" defaultHref="/nav/notification" slot="end"></ion-back-button>
 		<!-- Hamburger -->
 		<ion-buttons slot="start">
-			<ion-menu-button autoHide="false" color="light"></ion-menu-button>
+			<ion-menu-button autoHide="false" color="warning"></ion-menu-button>
 		</ion-buttons>
 
 	</ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-	<img src="assets/img/logo-blanc.png" alt="" style="max-width: 200px; display:block;margin:auto;">
-	<ion-card>
-		<ion-card-content>
-			<img src="assets/img/elcamino.jpg" alt="">
-		</ion-card-content>
-	</ion-card>
+<ion-content class="">
+	<img src="assets/img/logo-blanc.png" class="logo" alt="">
+	<img src="assets/img/elcamino.jpg" class="background" alt="">
 
-	<ion-card class="ion-padding">
-		<ion-card-content color="primary">
-			<ion-label color="primary">
-				<h3>El camino - pau</h3>
-			</ion-label>
-			<ion-text color="primary">
-				<p>
-					développer un programme ambitieux de réussite sociale par l'apprentissage intensif de la musique ;
-					ouvert à
-					tous, il a pour but de donner une chance à chaque jeune de s'épanouir ; programme à caractère social
-					et
-					éducatif
-					permet, par la pratique musicale et chorale, l'apprentissage de la vie en commun, le développement
-					des
-					capacités
-					du jeune, quelle que soit son origine ou sa situation.
-				</p>
-			</ion-text>
-			<ion-icon name="link" color="primary" class="ion-float-right"></ion-icon>
-		</ion-card-content>
 
-	</ion-card>
-	<ion-card class="ion-padding">
-		<ion-card-content>
-			<ion-label color="primary">
-				<h3>Orchestre de Pau Pays de Béarn (OPPB)</h3>
-			</ion-label>
-			<ion-text color="primary">
-				<p>
-					L'EPPC OPPB-El Camino vous adresse ses meilleurs vœux pour cette nouvelle année 2021. Nous vous
-					partageons
-					cette
-					prise de vue rare de notre emblématique Pic du Midi d’Ossau, qui veille, à une aube nouvelle, sous
-					la neige,
-					avant que les doigts de rose de l’aurore nous réchauffent enfin.
-					2021 sera, nous l'espérons, l'année de retrouvailles heureuses. Nous avons pris conscience à quel
-					point était
-					précieux ce qui nous est interdit aujourd’hui, aussi, nous chérirons encore davantage les concerts
-					et
-					spectacles, comme artistes et comme spectateurs.
-				</p>
-			</ion-text>
-			<ion-icon name="link" color="primary" class="ion-float-right"></ion-icon>
-		</ion-card-content>
-	</ion-card>
+
+
+	<div class="ion-padding">
+		<h3>Elcamino - Pau</h3>
+		<p class="text">
+			développer un programme ambitieux de réussite sociale par l'apprentissage intensif de la musique;
+			ouvert à tous, il a pour but de donner une chance à chaque jeune de s'épanouir ; programme à caractère
+			social
+			et éducatif permet, par la pratique musicale et chorale, l'apprentissage de la vie en commun, le
+			développement
+			des capacités du jeune, quelle que soit son origine ou sa situation.
+			<ion-icon name="link" color="light" class="ion-float-right"></ion-icon>
+		</p>
+	</div>
+
+	<div class="ion-padding">
+		<h3>Orchestre de Pau Pays de Béarn (OPPB)</h3>
+		<p class="text">
+			L'EPPC OPPB-El Camino vous adresse ses meilleurs vœux pour cette nouvelle année 2021. Nous vous
+			partageons cette prise de vue rare de notre emblématique Pic du Midi d’Ossau, qui veille, à une aube nouvelle, sous
+			la neige, avant que les doigts de rose de l’aurore nous réchauffent enfin.
+			2021 sera, nous l'espérons, l'année de retrouvailles heureuses. Nous avons pris conscience à quel
+			point était	précieux ce qui nous est interdit aujourd’hui, aussi, nous chérirons encore davantage les concerts
+			et spectacles, comme artistes et comme spectateurs.
+			<ion-icon name="link" color="light" class="ion-float-right"></ion-icon>
+		</p>
+	</div>
+
+	
 </ion-content>

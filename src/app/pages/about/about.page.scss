@@ -1,11 +1,15 @@
-p{
+// p{
+//     text-align: justify;
+// }
+
+.text{
     text-align: justify;
+    color: white;
 }
-
-
-ion-card h3{
+h3{
     font-weight: bold;
-    font-size: 18;
+    font-size: 15;
+    color: #FBBA00;
 }
 
 ion-title{
@@ -26,3 +30,12 @@ ion-header{
 ion-card{
     --background: #FBBA00;
 }
+
+.logo{
+    width: 300px;
+    position:absolute;
+    top:60px;
+    left:18%;
+    margin: auto;
+    box-shadow: 0 8px 6px -6px black;}
+
