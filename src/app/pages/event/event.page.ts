@@ -1,30 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { IonRouterOutlet, Platform } from '@ionic/angular';
-// import { Plugins } from '@capacitor/core';
-// const { App } = Plugins;
+
 import { App } from '@capacitor/app';
 import { Storage } from '@ionic/storage-angular'
 import { DataService } from 'src/app/services/data.service';
-import { Router } from '@angular/router';
 
 
 @Component({
-	selector: 'app-cours',
-	templateUrl: './cours.page.html',
-	styleUrls: ['./cours.page.scss'],
+  selector: 'app-event',
+  templateUrl: './event.page.html',
+  styleUrls: ['./event.page.scss'],
 })
-export class CoursPage implements OnInit {
-	notifications = []
+export class EventPage implements OnInit {
+
+  notifications = []
 	badge = 0
 	nNotif = 0
-	isData: boolean = false
-	length:number = 0
+	
 	constructor(
 		private platform: Platform,
 		private routerOutlet: IonRouterOutlet,
 		private dataService: DataService,
 		private storage: Storage,
-		private router:Router
 	) {
 		this.platform.backButton.subscribeWithPriority(-1, () => {
 			if (!this.routerOutlet.canGoBack()) {
@@ -42,11 +39,12 @@ export class CoursPage implements OnInit {
 	getNotification() {
 
 		this.notifications = []
-		this.dataService.getCours().subscribe(res => {
-			console.log(res.length);
+		this.dataService.getEvents().subscribe(res => {
+			
 			// mettre à jour le localStorage
-			this.storage.set('cours', res.length)
-
+			this.storage.set('event', res.length)
+			console.log(res);
+			
 			let notifications = res.map(item => {
 				return {
 					title: item.payload.doc.get('title'),
@@ -55,6 +53,7 @@ export class CoursPage implements OnInit {
 					// date: new Date(item.payload.doc.get('date')).toLocaleString()
 					date:item.payload.doc.get('date')
 				}
+				
 			})
 			this.notifications = notifications
 			this.notifications = notifications.sort((a, b) => {
@@ -67,12 +66,8 @@ export class CoursPage implements OnInit {
 				item.date = new Date(item.date).toLocaleString()
 				return item
 			})
+			
 		})
 	}
 
-	goBack(){
-		this.router.navigate(['/nav'],{queryParams:{diff:0}})
-	}
-
-	
 }

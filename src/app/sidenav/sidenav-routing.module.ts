@@ -25,6 +25,11 @@ const routes: Routes = [
         loadChildren: () => import('../pages/cours/cours.module').then( m => m.CoursPageModule)
       },
       {
+        path: 'event',
+        loadChildren: () => import('../pages/event/event.module').then( m => m.EventPageModule)
+      },
+
+      {
         path: '',
         redirectTo: '/nav/notification',
         pathMatch: 'full'

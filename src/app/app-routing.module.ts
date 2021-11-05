@@ -7,7 +7,8 @@ const routes: Routes = [
     loadChildren: () => import('./sidenav/sidenav.module').then( m => m.SidenavPageModule)
   },
 
-
+  
+ 
 ];
 
 @NgModule({

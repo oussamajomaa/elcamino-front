@@ -10,16 +10,19 @@
 </ion-header>
 
 <ion-content class="ion-padding">
+	
+
 
 		<div class="div-button">
 			<ion-tab-button routerLink="/nav/cours">
 				<ion-icon name="school"></ion-icon>
 				<ion-label>Cours</ion-label>
-				<span *ngIf="difference !== 0">{{difference}}</span>
+				<span *ngIf="differenceCours !== 0">{{differenceCours}}</span>
 			</ion-tab-button>
-			<ion-tab-button>
+			<ion-tab-button routerLink="/nav/event">
 				<img src="assets/icon/event.svg" alt="">
 				<ion-label>Evénements</ion-label>
+				<span *ngIf="differenceEvent !== 0">{{differenceEvent}}</span>
 			</ion-tab-button>
 		</div>
 		<div class="div-button">

@@ -46,6 +46,21 @@ export class DataService {
 		// return this.firestore.collection('notification',ref => ref.where('category','==','Formation')).snapshotChanges(["added"])
 	}
 
+	getCours(){
+		return this.firestore.collection('notification',ref => ref.where('category','==','cours'))
+		.snapshotChanges(["added"])
+	}
+
+	getEvents(){
+		return this.firestore.collection('notification',ref => ref.where('category','==','event'))
+		.snapshotChanges(["added"])
+	}
+
+	getStages(){
+		return this.firestore.collection('notification',ref => ref.where('category','==','stage'))
+		.snapshotChanges(["added"])
+	}
+
 	// setStorage(){
 	// 	this.getNotification().subscribe(res => {
 	// 		this.storage.set('cours',res.filter(c =>c.payload.doc.get('category')==='cours').length)
