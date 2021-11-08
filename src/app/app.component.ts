@@ -9,7 +9,8 @@ import {
 import { FCM } from "@capacitor-community/fcm";
 
 import { Capacitor } from '@capacitor/core';
-import { DataService } from 'src/app/services/data.service';
+import { ModalController } from '@ionic/angular';
+import { SplashComponent } from './splash/splash.component';
 const isPushNotificationsAvailable = Capacitor.isPluginAvailable('PushNotifications');
 
 @Component({
@@ -23,18 +24,18 @@ export class AppComponent implements OnInit {
 	listData:any = []
 	notif:any
 	tokens=[]
-	constructor(
-		private dataService: DataService,
-		) {
-		// this.loadData()
+	constructor(private modalController:ModalController) {
+		// this.presentSplash()
+		
 	}
 
-
-	// async loadData(){
-	// 	// this.listData = await this.dataService.getData()
-	// 	this.dataService.getData().subscribe(res => this.listData = res)
-	// }
-
+	async presentSplash() {
+		const modal = await this.modalController.create({
+		  component: SplashComponent,
+		  cssClass: 'my-custom-class'
+		});
+		return await modal.present();
+	  }
 
 	ngOnInit() {
 		if (isPushNotificationsAvailable) {
@@ -66,33 +67,13 @@ export class AppComponent implements OnInit {
 				'pushNotificationReceived',
 				(notification: PushNotificationSchema) => {
 					alert('notification reçue ' + JSON.stringify(notification.body));
-					// this.notif = {
-					// 	date:new Date().toISOString().slice(0, 10)+' '+new Date().toISOString().slice(11, 19),
-					// 	title: notification.title,
-					// 	body: notification.body,
-					// 	title1:notification.title,
-					// 	body1: notification.body,
-					// }
-					// this.dataService.addData(this.notif)
-					// this.loadData()
-				},
+				}
 			);
 
 			PushNotifications.addListener(
 				'pushNotificationActionPerformed',
 				async (notification:ActionPerformed) => {
-					// const item = {
-					// 	date:new Date().toISOString().slice(0, 10)+' '+new Date().toISOString().slice(11, 19),
-					// 	title: notification.notification.title,
-					// 	body: notification.notification.body,
-					// 	title1: notification.notification.data.title,
-					// 	body1: notification.notification.data.body,
-					// }
-					// await this.dataService.addData(item)
-					// await this.loadData()
-					// alert('Push action performed: ' + JSON.stringify(notification));
-					
-				},
+				}
 			);
 		}
 	}

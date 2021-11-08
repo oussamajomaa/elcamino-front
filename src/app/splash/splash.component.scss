@@ -1,0 +1,35 @@
+ion-content {
+  div {
+	  background: #FBBA00;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img{
+      width: 15px;
+    }
+  }
+ }
+    .splash-img{
+        -webkit-animation: rotate-scale-up 2s linear both;
+	        animation: rotate-scale-up 2s linear both;
+    }
+    
+    @keyframes rotate-scale-up {
+        0% {
+          -webkit-transform: scale(1) rotateZ(0);
+                  transform: scale(1) rotateZ(0);
+        }
+        50% {
+          -webkit-transform: scale(3) rotateZ(180deg);
+                  transform: scale(3) rotateZ(180deg);
+        }
+        100% {
+          -webkit-transform: scale(5) rotateZ(360deg);
+                  transform: scale(5) rotateZ(360deg);
+        }
+      }
+      
+
+      
