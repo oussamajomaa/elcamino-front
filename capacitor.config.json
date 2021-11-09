@@ -4,11 +4,14 @@
   "webDir": "www",
   "bundledWebRuntime": false,
   "plugins": {
+    "SplashScreen": {
+
+      "launchShowDuration": 1000
+    
+    },
     "PushNotifications": {
       "presentationOptions": [
-        "badge",
-        "sound",
-        "alert"
+        "sound"
       ]
     }
   }

@@ -40,6 +40,19 @@ ion-label{
 //     --background: #FBBA00;
 // }
 
+.spinner{
+    border: 6px solid #FBBA00;
+    border-top: 6px solid #009FE3;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 700ms linear infinite;
+    top:45%;
+    left: 45%;
+    position: absolute;
+    z-index: 100;
+}
+
 @keyframes spin {
     0% { transform: rotate(0deg)}
     100% { transform: rotate(360deg);}

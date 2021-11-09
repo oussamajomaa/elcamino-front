@@ -10,7 +10,6 @@ import { IonicStorageModule } from '@ionic/storage-angular';
 import { Drivers } from '@ionic/storage';
 import * as CordovaSQLiteDriver from 'localforage-cordovasqlitedriver';
 
-
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire/compat'
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
@@ -35,9 +34,13 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     AngularFireDatabaseModule,
     AngularFireStorageModule,
     AngularFirestoreModule,
+    
   ],
     
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [
+    
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
