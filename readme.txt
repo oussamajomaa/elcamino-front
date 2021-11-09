@@ -24,3 +24,18 @@ npx cap open android
 
 #FBBA00 yellow
 #192340 blue
+
+"SplashScreen": {
+      "launchShowDuration": 100,
+      "launchAutoHide": true,
+      "androidScaleType": "CENTER_CROP",
+      "androidSplashResourceName": "splash",
+      "splashFullScreen": false,
+      "splashImmersive": false
+    }
+  },
+  "android": {
+    "allowMixedContent": true
+  }
+
+  https://www.youtube.com/watch?v=cyDhIovbOXc
