@@ -15,8 +15,8 @@
 <ion-content class="ion-padding">
 	<ion-card *ngFor="let notification of notifications; let i = index;" class="ion-margin">
 		<ion-item>
-			<ion-label color="primary">{{notification.title}}</ion-label>
-			<ion-label color="primary">{{notification.date}}</ion-label>
+			<ion-label class="label1" color="primary">{{notification.title}}</ion-label>
+			<ion-label class="label2" color="primary">{{notification.date}}</ion-label>
 		</ion-item>
 
 		<ion-card-content color="warning">

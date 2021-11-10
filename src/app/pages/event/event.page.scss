@@ -31,14 +31,13 @@ ion-header{
 
 ion-card-content{
     color: #192340;
-}
-ion-label{
-    font-weight: 700;
+    text-align: justify;
 }
 
-// ion-card, ion-item{
-//     --background: #FBBA00;
-// }
+ion-label{
+    font-weight: 600 !important;
+    font-size: 14px !important;
+}
 
 @keyframes spin {
     0% { transform: rotate(0deg)}

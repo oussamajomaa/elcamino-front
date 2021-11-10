@@ -11,10 +11,8 @@ import { FCM } from "@capacitor-community/fcm";
 import { Capacitor } from '@capacitor/core';
 import { ModalController } from '@ionic/angular';
 import { SplashComponent } from './splash/splash.component';
-// import { Platform } from '@ionic/angular';
-// import { Plugins } from '@capacitor/core';
+
 const isPushNotificationsAvailable = Capacitor.isPluginAvailable('PushNotifications');
-// const { SplashScreen } = Plugins;
 
 @Component({
 	selector: 'app-root',
@@ -29,11 +27,9 @@ export class AppComponent implements OnInit {
 	tokens=[]
 	constructor(
 		private modalController:ModalController,
-		// private platform:Platform,
 		) {
-			// SplashScreen.hide();
 
-		// this.presentSplash()
+		this.presentSplash()
 		
 	}
 

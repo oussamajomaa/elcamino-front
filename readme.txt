@@ -39,3 +39,7 @@ npx cap open android
   }
 
   https://www.youtube.com/watch?v=cyDhIovbOXc
+
+  https://firebase.google.com/docs/cloud-messaging/android/receive
+
+  https://master.dnxhkl388y9pf.amplifyapp.com/notification

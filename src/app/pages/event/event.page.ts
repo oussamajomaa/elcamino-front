@@ -63,7 +63,7 @@ export class EventPage implements OnInit {
 			})
 
 			this.notifications = this.notifications.map(item => {
-				item.date = new Date(item.date).toLocaleString()
+				item.date = new Date(item.date).toLocaleString().slice(0,17)
 				return item
 			})
 			
