@@ -12,7 +12,18 @@ export const environment = {
     messagingSenderId: "437554991774",
     appId: "1:437554991774:web:cc1d63ec7815fb79ae218f",
     measurementId: "G-0DEXSSW9M0"
-  }
+  },
+
+  // ELCAMINO
+  // firebaseConfig: {
+  //   apiKey: "AIzaSyAUo-imsJPwphxKgkPOLZwfQW8gA6uAtqo",
+  //   authDomain: "el-camino-d9dfb.firebaseapp.com",
+  //   projectId: "el-camino-d9dfb",
+  //   storageBucket: "el-camino-d9dfb.appspot.com",
+  //   messagingSenderId: "901863467458",
+  //   appId: "1:901863467458:web:dfee71200e3685c9240e5b",
+  //   measurementId: "G-MGHM1KNH9X"
+  // },
 
 };
 

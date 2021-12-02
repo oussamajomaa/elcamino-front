@@ -1,9 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage-angular'
-// import * as CordovaSQLiteDriver from 'localforage-cordovasqlitedriver';
-// import { BehaviorSubject, from } from 'rxjs';
-// import { switchMap } from 'rxjs/operators';
-// import { filter } from 'rxjs/operators';
+
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 
@@ -19,32 +16,10 @@ export class DataService {
 		private firestore:AngularFirestore
 
 		) {
-		this.init()
-		// this.getNotificationNumber()
-		// this.getNotifNumber()
-		// this.setStorage()
+			this.storage.create()
 	}
 
-	init(){
-		this.storage.create()
-		// this.storage.remove('badge')
-		
-	}
 
-	// getNotifNumber(){
-	// 	this.firestore.collection('notification').get()
-	// 	.subscribe(res => this.storage.set('notification',res.size))
-
-	// }
-
-	
-	getNotification(){
-		// get all notifications
-		return this.firestore.collection('notification').snapshotChanges(["added"])
-
-		// // get notifications according to "category"
-		// return this.firestore.collection('notification',ref => ref.where('category','==','Formation')).snapshotChanges(["added"])
-	}
 
 	getCours(){
 		return this.firestore.collection('notification',ref => ref.where('category','==','cours'))
@@ -61,13 +36,6 @@ export class DataService {
 		.snapshotChanges(["added"])
 	}
 
-	// setStorage(){
-	// 	this.getNotification().subscribe(res => {
-	// 		this.storage.set('cours',res.filter(c =>c.payload.doc.get('category')==='cours').length)
-	// 		this.storage.set('stage',res.filter(c =>c.payload.doc.get('category')==='stage').length)
-	// 		this.storage.set('event',res.filter(c =>c.payload.doc.get('category')==='event').length)
-	// 	})
-	// }
 
 
 
