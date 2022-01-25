@@ -8,8 +8,7 @@ import { Storage } from '@ionic/storage-angular'
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
 
-
-
+import { Browser } from '@capacitor/browser';
 
 
 
@@ -30,6 +29,7 @@ export class NotificationPage implements OnInit {
 	stage = 0
 	storageStage = 0
 	differenceStage = 0
+
 
 
 	constructor(
@@ -61,6 +61,7 @@ export class NotificationPage implements OnInit {
 			this.cours = res.length
 			this.storage.get('cours').then(res => {
 				this.storageCours = res || 0
+				if (this.cours < this.storageCours) this.storageCours = 0
 				this.differenceCours = this.cours - this.storageCours
 			})
 		})
@@ -69,17 +70,22 @@ export class NotificationPage implements OnInit {
 			this.event = res.length
 			this.storage.get('event').then(res => {
 				this.storageEvent = res || 0
+				if (this.event < this.storageEvent) this.storageEvent = 0
 				this.differenceEvent = this.event - this.storageEvent
 			})
 		})
 
-		this.dataService.getStages().subscribe(res => {
-			this.stage = res.length
-			this.storage.get('stage').then(res => {
-				this.storageStage = res || 0
-				this.differenceStage = this.stage - this.storageStage
-			})
-		})
+		// this.dataService.getStages().subscribe(res => {
+		// 	this.stage = res.length
+		// 	this.storage.get('stage').then(res => {
+		// 		this.storageStage = res || 0
+		// 		this.differenceStage = this.stage - this.storageStage
+		// 	})
+		// })
+	}
+
+	async navigateToOPPB(){
+		await Browser.open({url:"https://www.oppb.fr/"})
 	}
 
 }

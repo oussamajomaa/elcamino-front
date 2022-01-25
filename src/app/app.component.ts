@@ -4,13 +4,20 @@ import {
 	PushNotificationSchema,
 	PushNotifications,
 	Token,
-	
 } from '@capacitor/push-notifications';
+
 import { FCM } from "@capacitor-community/fcm";
 
 import { Capacitor } from '@capacitor/core';
 import { ModalController } from '@ionic/angular';
 import { SplashComponent } from './splash/splash.component';
+
+
+// Settings for ios
+import { initializeApp } from 'firebase/app';
+import { environment } from 'src/environments/environment.prod';
+import { indexedDBLocalPersistence, initializeAuth } from 'firebase/auth';
+// End settings
 
 const isPushNotificationsAvailable = Capacitor.isPluginAvailable('PushNotifications');
 
@@ -25,9 +32,15 @@ export class AppComponent implements OnInit {
 	listData:any = []
 	notif:any
 	tokens=[]
-	constructor(
-		private modalController:ModalController,
-		) {
+	constructor(private modalController:ModalController) {
+		// IOS settings
+		const app = initializeApp(environment.firebaseConfig);
+		if (Capacitor.isNativePlatform) {
+			initializeAuth(app, {
+			persistence: indexedDBLocalPersistence
+			});
+		}
+		// END IOS settings
 
 		this.presentSplash()
 		

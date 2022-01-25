@@ -31,10 +31,10 @@ export class DataService {
 		.snapshotChanges(["added"])
 	}
 
-	getStages(){
-		return this.firestore.collection('notification',ref => ref.where('category','==','stage'))
-		.snapshotChanges(["added"])
-	}
+	// getStages(){
+	// 	return this.firestore.collection('notification',ref => ref.where('category','==','stage'))
+	// 	.snapshotChanges(["added"])
+	// }
 
 
 

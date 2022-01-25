@@ -15,10 +15,7 @@ import { Router } from '@angular/router';
 })
 export class CoursPage implements OnInit {
 	notifications = []
-	badge = 0
-	nNotif = 0
-	isData: boolean = false
-	length:number = 0
+
 	constructor(
 		private platform: Platform,
 		private routerOutlet: IonRouterOutlet,
@@ -68,11 +65,6 @@ export class CoursPage implements OnInit {
 				return item
 			})
 		})
+		
 	}
-
-	goBack(){
-		this.router.navigate(['/nav'],{queryParams:{diff:0}})
-	}
-
-	
 }

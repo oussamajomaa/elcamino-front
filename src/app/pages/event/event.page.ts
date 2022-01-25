@@ -13,10 +13,7 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class EventPage implements OnInit {
 
-  notifications = []
-	badge = 0
-	nNotif = 0
-	
+  	notifications = []
 	constructor(
 		private platform: Platform,
 		private routerOutlet: IonRouterOutlet,
@@ -68,6 +65,7 @@ export class EventPage implements OnInit {
 			})
 			
 		})
+		
 	}
 
 }

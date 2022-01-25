@@ -10,22 +10,20 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-	
-
-
 		<div class="div-button">
-			<ion-tab-button routerLink="/nav/cours">
+			<ion-tab-button routerLink="/nav/cours" [disabled]="cours===0">
 				<ion-icon name="school"></ion-icon>
 				<ion-label>Cours</ion-label>
-				<span *ngIf="differenceCours !== 0">{{differenceCours}}</span>
+				<span *ngIf="differenceCours !== 0"><img src="assets/icon/bill.svg" alt=""></span>
 			</ion-tab-button>
-			<ion-tab-button routerLink="/nav/event">
+			<ion-tab-button routerLink="/nav/event" [disabled]="event===0">
 				<img src="assets/icon/event.svg" alt="">
 				<ion-label>Evénements</ion-label>
-				<span *ngIf="differenceEvent !== 0">{{differenceEvent}}</span>
+				<span *ngIf="differenceEvent !== 0"><img src="assets/icon/bill.svg" alt=""></span>
 			</ion-tab-button>
 		</div>
-		<div class="div-button">
+
+		<!--<div class="div-button">
 			<ion-tab-button>
 				<ion-icon name="musical-notes" ></ion-icon>
 				<ion-label>Orchestre</ion-label>
@@ -44,14 +42,13 @@
 				<ion-icon name="camera" ></ion-icon>
 				<ion-label>Souvenirs</ion-label>
 			</ion-tab-button>
-		</div>
+		</div>-->
+
 		<div class="div-button">
-			<ion-tab-button>
-				<img src="assets/icon/oppb.png" alt="">
+			<ion-tab-button class="oppb" (click)="navigateToOPPB()">
+				<img src="assets/icon/oppb.png" style="width: 100%;" alt="">
 			</ion-tab-button>
-			<ion-tab-button style="visibility: hidden;">
-				<img src="assets/icon/oppb.png" alt="">
-			</ion-tab-button>
+			
 		</div>
 		<img src="assets/img/logo-blanc.png" alt="" style="max-width: 200px; display:block;margin:auto;">
 </ion-content>
